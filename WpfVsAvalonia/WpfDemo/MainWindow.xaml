@@ -1,0 +1,20 @@
+﻿<Window
+    Height="450"
+    Title="MainWindow"
+    Width="800"
+    mc:Ignorable="d"
+    x:Class="WpfDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:control="clr-namespace:WpfDemo.control"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <control:BlinkingButton
+            Height="50"
+            HorizontalAlignment="Center"
+            IsBlinking="True"
+            VerticalAlignment="Center"
+            Width="100" />
+    </Grid>
+</Window>
