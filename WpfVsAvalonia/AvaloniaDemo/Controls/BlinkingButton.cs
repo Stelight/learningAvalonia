@@ -18,7 +18,6 @@ public class BlinkingButton : Button
         // 监听属性变化
         this.GetObservable(IsBlinkingProperty).Subscribe(OnIsBlinkingChanged);
     }
-
     public bool IsBlinking
     {
         get => GetValue(IsBlinkingProperty);

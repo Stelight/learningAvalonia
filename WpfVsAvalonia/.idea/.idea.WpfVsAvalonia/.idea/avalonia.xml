@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="AvaloniaDemo/Themes/BlinkingButtonStyles.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
+        <entry key="AvaloniaDemo/Views/MainWindow.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
