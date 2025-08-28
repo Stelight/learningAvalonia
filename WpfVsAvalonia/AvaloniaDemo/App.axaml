@@ -9,9 +9,17 @@
     <Application.DataTemplates>
         <local:ViewLocator />
     </Application.DataTemplates>
-
+    <!--  Styles：只能放 控件样式（Setter、ControlTemplate 等）  -->
     <Application.Styles>
         <FluentTheme />
         <StyleInclude Source="avares://AvaloniaDemo/Themes/BlinkingButtonStyles.axaml" />
     </Application.Styles>
+    <!--  Resources：只能放 非样式资源（Brush、字符串、数值等）。  -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://AvaloniaDemo/Themes/ColorAndFonts.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

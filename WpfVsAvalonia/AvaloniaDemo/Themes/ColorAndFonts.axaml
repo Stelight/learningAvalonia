@@ -1,0 +1,18 @@
+﻿<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  Add Resources Here  -->
+    <!--  定义颜色  -->
+    <Color x:Key="PrimaryColor">#FF4CAF50</Color>
+    <SolidColorBrush Color="{StaticResource PrimaryColor}" x:Key="PrimaryColorBrush" />
+
+    <Color x:Key="SecondaryColor">#FFC107</Color>
+    <SolidColorBrush Color="{StaticResource SecondaryColor}" x:Key="SecondaryColorBrush" />
+
+    <Color x:Key="AccentColor">#FFEB3B</Color>
+    <SolidColorBrush Color="{StaticResource AccentColor}" x:Key="AccentColorBrush" />
+    <!--  定义字体  -->
+    <FontWeight x:Key="BoldFontWeight">Bold</FontWeight>
+    <system:Double x:Key="DefaultFontSize">30</system:Double>
+</ResourceDictionary>

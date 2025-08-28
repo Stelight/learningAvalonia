@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Page Update="Themes\Generic.xaml">
+        <Page Update="Themes\blinkingButtonStyle.xaml">
             <Generator>MSBuild:Compile</Generator>
             <XamlRuntime>Wpf</XamlRuntime>
             <SubType>Designer</SubType>

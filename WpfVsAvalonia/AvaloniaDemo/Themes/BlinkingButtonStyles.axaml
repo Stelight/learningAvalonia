@@ -28,15 +28,25 @@
             </ControlTemplate>
         </Setter>
     </Style>
-    <!--  红色风格  -->
-    <Style Selector="local|BlinkingButton.green">
-        <Setter Property="Background">
+    <!--  新增的 Button 样式  -->
+    <Style Selector="Button.rounded">
+        <Setter Property="Background" Value="LightBlue" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="Template">
             <Setter.Value>
-                <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
-                    <GradientStop Color="#00C3FF" Offset="0" />
-                    <GradientStop Color="Chartreuse" Offset="1" />
-                </LinearGradientBrush>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="20">
+                        <ContentPresenter
+                            Content="{TemplateBinding Content}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+
 </Styles>

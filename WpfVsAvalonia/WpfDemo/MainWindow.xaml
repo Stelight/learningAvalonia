@@ -1,5 +1,5 @@
 ﻿<Window
-    Height="300"
+    Height="400"
     Title="MainWindow"
     Width="600"
     mc:Ignorable="d"
@@ -12,6 +12,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <control:BlinkingButton
@@ -23,10 +25,32 @@
             Grid.Row="0"
             Height="80"
             HorizontalAlignment="Center"
-            IsBlinking="True"
+            IsBlinking="False"
             VerticalAlignment="Center"
             Width="300"
             x:Name="MyBlinkButton" />
+        <Button
+            Background="{StaticResource PrimaryColorBrush}"
+            Content="我是一个圆角按钮"
+            FontSize="{StaticResource DefaultFontSize}"
+            FontWeight="{StaticResource BoldFontWeight}"
+            Grid.Row="1"
+            Height="80"
+            HorizontalAlignment="Center"
+            Style="{StaticResource RoundedButtonStyle}"
+            VerticalAlignment="Center"
+            Width="300" />
+        <Button
+            Background="{StaticResource SecondaryColorBrush}"
+            Content="我是一个圆角按钮"
+            FontSize="{StaticResource DefaultFontSize}"
+            FontWeight="{StaticResource BoldFontWeight}"
+            Grid.Row="2"
+            Height="80"
+            HorizontalAlignment="Center"
+            Style="{StaticResource RoundedButtonStyle}"
+            VerticalAlignment="Center"
+            Width="300" />
 
     </Grid>
 </Window>

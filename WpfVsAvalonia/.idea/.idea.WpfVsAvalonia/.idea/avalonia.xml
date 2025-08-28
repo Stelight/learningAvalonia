@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="AvaloniaDemo/App.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
+        <entry key="AvaloniaDemo/Themes/BlinkingButtonStyles.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
         <entry key="AvaloniaDemo/Views/MainWindow.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
       </map>
     </option>
