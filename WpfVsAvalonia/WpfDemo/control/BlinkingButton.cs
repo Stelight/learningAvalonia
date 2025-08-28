@@ -10,6 +10,22 @@ public class BlinkingButton : Button
         IsBlinkingProperty = DependencyProperty.Register(
             nameof(IsBlinking), typeof(bool), typeof(BlinkingButton), new PropertyMetadata(false, OnIsBlinkingChanged));
 
+
+    // ================== 路由事件定义 ==================
+    public static readonly RoutedEvent BlinkingStartedEvent =
+        EventManager.RegisterRoutedEvent(
+            nameof(BlinkingStarted),
+            RoutingStrategy.Bubble, // 事件冒泡
+            typeof(RoutedEventHandler),
+            typeof(BlinkingButton));
+
+    public static readonly RoutedEvent BlinkingStoppedEvent =
+        EventManager.RegisterRoutedEvent(
+            nameof(BlinkingStopped),
+            RoutingStrategy.Bubble,
+            typeof(RoutedEventHandler),
+            typeof(BlinkingButton));
+
     private Storyboard? _blinkStoryboard;
 
     static BlinkingButton()
@@ -22,6 +38,19 @@ public class BlinkingButton : Button
     {
         get => (bool)GetValue(IsBlinkingProperty);
         set => SetValue(IsBlinkingProperty, value);
+    }
+
+    // CLR 封装
+    public event RoutedEventHandler BlinkingStarted
+    {
+        add => AddHandler(BlinkingStartedEvent, value);
+        remove => RemoveHandler(BlinkingStartedEvent, value);
+    }
+
+    public event RoutedEventHandler BlinkingStopped
+    {
+        add => AddHandler(BlinkingStoppedEvent, value);
+        remove => RemoveHandler(BlinkingStoppedEvent, value);
     }
 
     private static void OnIsBlinkingChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -52,11 +81,14 @@ public class BlinkingButton : Button
         }
 
         _blinkStoryboard.Begin();
+        RaiseEvent(new RoutedEventArgs(BlinkingStartedEvent, this));
     }
 
     private void StopBlinking()
     {
         _blinkStoryboard?.Stop();
         Opacity = 1.0;
+        // 触发路由事件
+        RaiseEvent(new RoutedEventArgs(BlinkingStoppedEvent, this));
     }
 }

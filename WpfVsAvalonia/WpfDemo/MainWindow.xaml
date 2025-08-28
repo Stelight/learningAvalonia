@@ -1,7 +1,7 @@
 ﻿<Window
-    Height="450"
+    Height="300"
     Title="MainWindow"
-    Width="800"
+    Width="600"
     mc:Ignorable="d"
     x:Class="WpfDemo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -10,11 +10,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <control:BlinkingButton
-            Height="50"
+            BlinkingStarted="BlinkingButton_OnBlinkingStarted"
+            BlinkingStopped="BlinkingButton_OnBlinkingStopped"
+            Click="ButtonBase_OnClick"
+            Content="点击我"
+            FontSize="20"
+            Grid.Row="0"
+            Height="80"
             HorizontalAlignment="Center"
             IsBlinking="True"
             VerticalAlignment="Center"
-            Width="100" />
+            Width="300"
+            x:Name="MyBlinkButton" />
+
     </Grid>
 </Window>
