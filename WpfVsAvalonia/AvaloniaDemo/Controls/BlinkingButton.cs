@@ -3,6 +3,7 @@ using System.Threading;
 using Avalonia;
 using Avalonia.Animation;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Styling;
 
@@ -26,7 +27,6 @@ public class BlinkingButton : Button
 
     private Animation? _blinkAnimation;
     private CancellationTokenSource? _cts;
-
     public BlinkingButton()
     {
         // 监听属性变化

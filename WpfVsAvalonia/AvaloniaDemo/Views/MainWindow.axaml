@@ -22,7 +22,7 @@
         -->
         <vm:MainWindowViewModel />
     </Design.DataContext>
-    <Grid RowDefinitions="100,100,100,Auto">
+    <Grid ColumnDefinitions="300,300" RowDefinitions="100,100,100,Auto">
         <controls:BlinkingButton
             BlinkingStarted="BlinkingButton_OnBlinkingStarted"
             BlinkingStopped="BlinkingButton_OnBlinkingStopped"
@@ -40,9 +40,9 @@
             Background="{StaticResource PrimaryColorBrush}"
             Classes="rounded"
             Content="我是一个圆角按钮"
-            FontFamily="{StaticResource DefaultFontFamily}"
             FontSize="{StaticResource DefaultFontSize}"
             FontWeight="{StaticResource BoldFontWeight}"
+            Grid.Column="0"
             Grid.Row="1"
             Height="80"
             HorizontalAlignment="Center"
@@ -52,13 +52,32 @@
             Background="{StaticResource SecondaryColorBrush}"
             Classes="rounded"
             Content="我是一个圆角按钮"
-            FontFamily="{StaticResource DefaultFontFamily}"
             FontSize="{StaticResource DefaultFontSize}"
             FontWeight="{StaticResource BoldFontWeight}"
+            Grid.Column="0"
             Grid.Row="2"
             Height="80"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Width="300" />
+        <controls:TriangleControl
+            Fill="Crimson"
+            Grid.Column="1"
+            Grid.Row="0"
+            Height="100"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="100" />
+
+        <controls:TriangleControl
+            Fill="DarkOrange"
+            Grid.Column="1"
+            Grid.Row="1"
+            Height="100"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="100" />
+
+
     </Grid>
 </Window>

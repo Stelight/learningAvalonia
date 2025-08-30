@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/blinkingButtonStyle.xaml" />
+                <ResourceDictionary Source="Themes/TriangleControlStyle.xaml" />
                 <ResourceDictionary Source="Themes/ColorAndFomts.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

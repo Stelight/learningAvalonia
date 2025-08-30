@@ -1,0 +1,26 @@
+﻿<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:controls="clr-namespace:AvaloniaDemo.Controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <controls:TriangleControl />
+    </Design.PreviewWith>
+    <Style Selector="controls|TriangleControl">
+        <!--  Set Defaults  -->
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:TriangleControl">
+                    <Viewbox Stretch="Uniform">
+                        <Path
+                            Data="M 0,1 L 0.5,0 L 1,1 Z"
+                            Fill="{TemplateBinding Fill}"
+                            Stretch="Uniform"
+                            x:Name="PART_Path" />
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</Styles>

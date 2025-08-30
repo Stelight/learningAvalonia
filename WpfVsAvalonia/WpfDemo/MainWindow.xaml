@@ -5,7 +5,7 @@
     mc:Ignorable="d"
     x:Class="WpfDemo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:control="clr-namespace:WpfDemo.control"
+    xmlns:control="clr-namespace:WpfDemo.controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -14,14 +14,19 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="100" />
             <RowDefinition Height="100" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="100" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
         <control:BlinkingButton
             BlinkingStarted="BlinkingButton_OnBlinkingStarted"
             BlinkingStopped="BlinkingButton_OnBlinkingStopped"
             Click="ButtonBase_OnClick"
             Content="点击我"
             FontSize="20"
+            Grid.Column="0"
             Grid.Row="0"
             Height="80"
             HorizontalAlignment="Center"
@@ -34,6 +39,7 @@
             Content="我是一个圆角按钮"
             FontSize="{StaticResource DefaultFontSize}"
             FontWeight="{StaticResource BoldFontWeight}"
+            Grid.Column="0"
             Grid.Row="1"
             Height="80"
             HorizontalAlignment="Center"
@@ -45,12 +51,31 @@
             Content="我是一个圆角按钮"
             FontSize="{StaticResource DefaultFontSize}"
             FontWeight="{StaticResource BoldFontWeight}"
+            Grid.Column="0"
             Grid.Row="2"
             Height="80"
             HorizontalAlignment="Center"
             Style="{StaticResource RoundedButtonStyle}"
             VerticalAlignment="Center"
             Width="300" />
+
+        <control:TriangleControl
+            Fill="Crimson"
+            Grid.Column="1"
+            Grid.Row="0"
+            Height="100"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="100" />
+
+        <control:TriangleControl
+            Fill="DarkOrange"
+            Grid.Column="1"
+            Grid.Row="1"
+            Height="100"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="100" />
 
     </Grid>
 </Window>

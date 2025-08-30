@@ -1,8 +1,9 @@
 <Styles
     xmlns="https://github.com/avaloniaui"
-    xmlns:local="clr-namespace:AvaloniaDemo.Controls"
+    xmlns:controls="clr-namespace:AvaloniaDemo.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style Selector="local|BlinkingButton">
+
+    <Style Selector="controls|BlinkingButton">
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush EndPoint="100%,100%" StartPoint="0%,0%">
@@ -48,5 +49,4 @@
             </Setter.Value>
         </Setter>
     </Style>
-
 </Styles>

@@ -1,6 +1,6 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:control="clr-namespace:WpfDemo.control"
+    xmlns:control="clr-namespace:WpfDemo.controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="{x:Type control:BlinkingButton}">

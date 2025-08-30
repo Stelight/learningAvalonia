@@ -2,7 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
-namespace WpfDemo.control;
+namespace WpfDemo.controls;
 
 public class BlinkingButton : Button
 {

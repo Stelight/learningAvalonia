@@ -13,6 +13,7 @@
     <Application.Styles>
         <FluentTheme />
         <StyleInclude Source="avares://AvaloniaDemo/Themes/BlinkingButtonStyles.axaml" />
+        <StyleInclude Source="avares://AvaloniaDemo/Themes/TriangleControl.axaml" />
     </Application.Styles>
     <!--  Resources：只能放 非样式资源（Brush、字符串、数值等）。  -->
     <Application.Resources>
