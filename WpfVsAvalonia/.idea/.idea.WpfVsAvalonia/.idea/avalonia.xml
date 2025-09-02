@@ -6,6 +6,7 @@
         <entry key="AvaloniaDemo/App.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
         <entry key="AvaloniaDemo/Themes/BlinkingButtonStyles.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
         <entry key="AvaloniaDemo/Themes/ColorAndFonts.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
+        <entry key="AvaloniaDemo/Themes/Themes.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
         <entry key="AvaloniaDemo/Themes/TriangleControl.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
         <entry key="AvaloniaDemo/Themes/TriangleControlStyles.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />
         <entry key="AvaloniaDemo/Views/MainWindow.axaml" value="AvaloniaDemo/AvaloniaDemo.csproj" />

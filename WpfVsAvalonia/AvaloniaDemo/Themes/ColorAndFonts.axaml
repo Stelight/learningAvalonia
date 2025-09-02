@@ -15,4 +15,5 @@
     <!--  定义字体  -->
     <FontWeight x:Key="BoldFontWeight">Bold</FontWeight>
     <system:Double x:Key="DefaultFontSize">30</system:Double>
+
 </ResourceDictionary>
