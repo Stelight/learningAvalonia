@@ -94,4 +94,25 @@
     <Style Selector="Button.squareBlackForeground:pointerover">
         <Setter Property="Foreground" Value="DodgerBlue" />
     </Style>
+    <Style Selector="Button.NormalButton">
+        <Setter Property="Background" Value="LightGray" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                        <ContentPresenter
+                            Content="{TemplateBinding Content}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
 </Styles>

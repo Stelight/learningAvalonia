@@ -1,20 +1,24 @@
 <Window
-    Height="400"
+    Height="600"
     Icon="/Assets/avalonia-logo.ico"
     Title="AvaloniaDemo"
-    Width="600"
+    Width="900"
     d:DesignHeight="600"
-    d:DesignWidth="600"
+    d:DesignWidth="900"
     mc:Ignorable="d"
     x:Class="AvaloniaDemo.Views.MainWindow"
     x:DataType="vm:MainWindowViewModel"
     xmlns="https://github.com/avaloniaui"
+    xmlns:avaloniaDemo="clr-namespace:AvaloniaDemo"
     xmlns:controls="clr-namespace:AvaloniaDemo.Controls"
+    xmlns:converters="clr-namespace:AvaloniaDemo.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:AvaloniaDemo.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
+    <Window.Resources>
+        <converters:BooleanToClassConverter x:Key="BooleanToClassConverter" />
+    </Window.Resources>
     <Design.DataContext>
         <!--
             This only sets the DataContext for the previewer in an IDE,
@@ -22,7 +26,7 @@
         -->
         <vm:MainWindowViewModel />
     </Design.DataContext>
-    <Grid ColumnDefinitions="300,300" RowDefinitions="100,100,100,100,100,Auto">
+    <Grid ColumnDefinitions="300,300" RowDefinitions="100,100,100,100,100,Auto,*">
         <controls:BlinkingButton
             BlinkingStarted="BlinkingButton_OnBlinkingStarted"
             BlinkingStopped="BlinkingButton_OnBlinkingStopped"
@@ -48,6 +52,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Width="300" />
+        <!--  下面的4个button用于演示avalonia中style和ControlTheme的区别  -->
         <Button
             Background="{StaticResource SecondaryColorBrush}"
             Classes="rounded"
@@ -128,5 +133,81 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Width="100" />
+        <StackPanel
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="6"
+            Orientation="Horizontal">
+            <!--  1. Trigger鼠标悬停和按下（基础属性触发）的替换  -->
+            <Button
+                Classes="NormalButton"
+                Content="Trigger"
+                Height="60"
+                HorizontalContentAlignment="Center"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Width="200">
+                <Button.Styles>
+                    <Style Selector="Button:pointerover">
+                        <Setter Property="Background" Value="DodgerBlue" />
+                        <Setter Property="Foreground" Value="White" />
+                    </Style>
+                    <Style Selector="Button:pressed">
+                        <Setter Property="Background" Value="DarkBlue" />
+                        <Setter Property="Foreground" Value="White" />
+                    </Style>
+
+                </Button.Styles>
+            </Button>
+            <!--  2. MultiTrigger多条件组合触发的替换  -->
+            <Button
+                Classes="NormalButton"
+                Content="MultiTrigger"
+                Height="60"
+                HorizontalContentAlignment="Center"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Width="200">
+                <Button.Styles>
+                    <Style Selector="Button:pointerover">
+                        <Setter Property="Background" Value="DodgerBlue" />
+                        <Setter Property="Foreground" Value="White" />
+                    </Style>
+                    <Style Selector="Button:pressed">
+                        <Setter Property="Background" Value="DarkBlue" />
+                        <Setter Property="Foreground" Value="White" />
+                    </Style>
+                </Button.Styles>
+            </Button>
+            <!--  3. DataTrigger数据性触发的替换  -->
+            <Button
+                Classes="NormalButton"
+                Content="DataTrigger"
+                Height="60"
+                HorizontalContentAlignment="Center"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                Width="200">
+                <Interaction.Behaviors>
+                    <DataTriggerBehavior
+                        Binding="{Binding Status}"
+                        ComparisonCondition="Equal"
+                        Value="True">
+                        <ChangePropertyAction PropertyName="Background" Value="GreenYellow" />
+                        <ChangePropertyAction PropertyName="Foreground" Value="DarkRed" />
+                    </DataTriggerBehavior>
+                    <DataTriggerBehavior
+                        Binding="{Binding Status}"
+                        ComparisonCondition="Equal"
+                        Value="False">
+                        <ChangePropertyAction PropertyName="Background" Value="DarkRed" />
+                        <ChangePropertyAction PropertyName="Foreground" Value="GreenYellow" />
+                    </DataTriggerBehavior>
+                    <EventTriggerBehavior EventName="Click">
+                        <InvokeCommandAction Command="{Binding ChangeStatusCommand}" />
+                    </EventTriggerBehavior>
+                </Interaction.Behaviors>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

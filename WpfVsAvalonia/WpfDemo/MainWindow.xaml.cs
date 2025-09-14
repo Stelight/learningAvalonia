@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using WpfDemo.ViewModels;
 
 namespace WpfDemo;
 
@@ -10,9 +11,8 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        DataContext = new MainWindowViewModel();
     }
-
-
     private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
     {
         MyBlinkButton.IsBlinking = !MyBlinkButton.IsBlinking;

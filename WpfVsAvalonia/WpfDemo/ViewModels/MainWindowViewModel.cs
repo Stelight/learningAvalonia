@@ -1,12 +1,13 @@
 ﻿using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace AvaloniaDemo.ViewModels;
+namespace WpfDemo.ViewModels;
 
-public class MainWindowViewModel : ViewModelBase
+public class MainWindowViewModel:ObservableObject
 {
     private bool _status;
-    public bool Status
+     public bool Status
     {
         get => _status;
         set => SetProperty(ref _status, value);
