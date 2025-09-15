@@ -35,7 +35,7 @@
         </Style>
 
     </Window.Resources>
-    <Grid>
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="100" />
@@ -86,6 +86,56 @@
             Style="{StaticResource RoundedButtonStyle}"
             VerticalAlignment="Center"
             Width="300" />
+        <Button
+            Background="{StaticResource PrimaryColorBrush}"
+            Content="EventTrigger"
+            FontSize="{StaticResource DefaultFontSize}"
+            FontWeight="{StaticResource BoldFontWeight}"
+            Foreground="DodgerBlue"
+            Grid.Column="0"
+            Grid.Row="3"
+            Height="80"
+            HorizontalAlignment="Center"
+            RenderTransformOrigin="0.5,0.5"
+            Style="{StaticResource RoundedButtonStyle}"
+            VerticalAlignment="Center"
+            Width="300">
+            <Button.RenderTransform>
+                <RotateTransform Angle="0" />
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard FillBehavior="Stop" RepeatBehavior="Forever">
+                            <ColorAnimation
+                                Duration="0:0:0.2"
+                                Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+                                To="Red" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                Duration="0:0:0.5"
+                                Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"
+                                To="DodgerBlue" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                By="360"
+                                Duration="0:0:0.5"
+                                Storyboard.TargetProperty="(Button.RenderTransform).(RotateTransform.Angle)" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
         <control:TriangleControl
             Fill="Crimson"
             Grid.Column="1"
@@ -102,6 +152,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Width="100" />
+
         <!--  下面的控件用于演示style中Trigger的使用  -->
         <StackPanel
             Grid.Column="0"

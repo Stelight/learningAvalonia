@@ -66,6 +66,42 @@
             VerticalAlignment="Center"
             Width="300" />
         <Button
+            Background="{StaticResource PrimaryColorBrush}"
+            Classes="rounded"
+            Content="EventTrigger"
+            FontSize="{StaticResource DefaultFontSize}"
+            FontWeight="{StaticResource BoldFontWeight}"
+            Foreground="DodgerBlue"
+            Grid.Column="1"
+            Grid.Row="2"
+            Height="80"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="300">
+            <Button.Transitions>
+                <Transitions>
+                    <TransformOperationsTransition Duration="0:0:0.2" Property="RenderTransform" />
+                </Transitions>
+            </Button.Transitions>
+            <Button.Styles>
+                <Style Selector="Button:pointerover">
+                    <Style.Animations>
+                        <Animation Duration="0:0:0.5" IterationCount="Infinite">
+                            <KeyFrame Cue="0%">
+                                <Setter Property="Foreground" Value="DodgerBlue" />
+                            </KeyFrame>
+                            <KeyFrame Cue="100%">
+                                <Setter Property="Foreground" Value="Red" />
+                            </KeyFrame>
+                        </Animation>
+                    </Style.Animations>
+                </Style>
+                <Style Selector="Button:pointerover:pressed">
+                    <Setter Property="RenderTransform" Value="rotate(360deg)" />
+                </Style>
+            </Button.Styles>
+        </Button>
+        <Button
             Background="{StaticResource SecondaryColorBrush}"
             Classes="squareWhiteForeground"
             Content="方角按钮"
@@ -78,6 +114,7 @@
             Margin="5"
             VerticalAlignment="Center"
             Width="250" />
+
         <Button
             Background="{StaticResource SecondaryColorBrush}"
             Classes="squareBlackForeground"
@@ -208,6 +245,8 @@
                     </EventTriggerBehavior>
                 </Interaction.Behaviors>
             </Button>
+
+
         </StackPanel>
     </Grid>
 </Window>
